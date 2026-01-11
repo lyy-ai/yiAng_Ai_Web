@@ -1,0 +1,156 @@
+{
+  "site_name": "北京义昂AI科技有限公司",
+  "site_description": "专业的技术培训平台，提供优质的技术课程和实战项目",
+  "navigation": [
+    {
+      "id": "home",
+      "name": "首页",
+      "url": "/",
+      "icon": "🏠"
+    },
+    {
+      "id": "courses",
+      "name": "课程中心",
+      "url": "/courses",
+      "icon": "📚"
+    },
+    {
+      "id": "videos",
+      "name": "视频教程",
+      "url": "/videos",
+      "icon": "🎬"
+    },
+    {
+      "id": "articles",
+      "name": "技术文章",
+      "url": "/articles",
+      "icon": "📝"
+    },
+    {
+      "id": "about",
+      "name": "关于我们",
+      "url": "/about",
+      "icon": "ℹ️"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "title": "端到端3DGS仿真训练营",
+      "description": "端到端自动驾驶3DGS特训营，从基础到进阶，掌握3D Gaussian Splatting核心技术与前沿算法",
+      "category": "AI",
+      "level": "高级",
+      "duration": "21课时",
+      "price": "¥899",
+      "instructor": "阿伟老师",
+      "tags": ["3DGS", "自动驾驶", "3D渲染"],
+      "image": "/static/images/gs.jpeg",
+      "video_url": "https://www.bilibili.com/video/BV1FUYMzbEUZ?spm_id_from=333.788.videopod.sections&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "syllabus_image": "/static/images/3dgs.jpg"
+    },
+    {
+      "id": 2,
+      "title": "分布式存储训练营",
+      "description": "深入学习分布式存储系统架构与设计，掌握高可用、高性能存储解决方案的核心技术与实战技能",
+      "category": "后端开发",
+      "level": "高级",
+      "duration": "18课时",
+      "price": "¥899",
+      "instructor": "基架小刘",
+      "tags": ["分布式存储", "后端", "存储系统"],
+      "image": "/static/images/fbs_title.png",
+      "video_url": "https://www.bilibili.com/video/BV1w2CkBPEed/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "syllabus_image": "/static/images/fbs_learning.png"
+    },
+    {
+      "id": 3,
+      "title": "端到端自动驾驶训练营",
+      "description": "从感知到决策的端到端自动驾驶系统实战，掌握L2-L4级自动驾驶核心技术与算法实现",
+      "category": "AI",
+      "level": "高级",
+      "duration": "22课时",
+      "price": "¥899",
+      "instructor": "小阳哥，阿伟",
+      "tags": ["自动驾驶", "端到端", "AI"],
+      "image": "/static/images/ddd_title.png",
+      "video_url": "https://www.bilibili.com/video/BV1Jdw6eyEU3/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "syllabus_image": "/static/images/ddd_learning.jpg"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "title": "工作是怎样写C++的",
+      "description": "深入探讨C++在实际工作中的编程规范、代码风格和最佳实践，分享企业级项目开发经验",
+      "url": "https://www.bilibili.com/video/BV1ZT411Y7d7/?spm_id_from=333.1387.0.0&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "duration": "52分钟",
+      "views": 3280,
+      "date": "2025-01-05"
+    },
+    {
+      "id": 2,
+      "title": "CUDA编程权威指针",
+      "description": "深入讲解CUDA并行编程核心技术，从基础到进阶，掌握GPU加速编程的精髓和最佳实践",
+      "url": "https://www.bilibili.com/video/BV15s4y1L7oV/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "duration": "68分钟",
+      "views": 4150,
+      "date": "2025-01-08"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "title": "万字长文：选行业避坑指针",
+      "summary": "深度解析IT行业选择的关键要素，帮你避开职业发展中的常见陷阱，找到最适合自己的技术方向",
+      "content": "这是一篇关于IT行业选择的深度文章，涵盖了行业趋势分析、技能发展路径、薪资待遇对比等多个维度，帮助技术人做出更明智的职业选择...",
+      "author": "技术团队",
+      "date": "2025-01-10",
+      "category": "行业选择",
+      "views": 3680,
+      "external_url": "https://mp.weixin.qq.com/s/s3k0u4TmzDUNFJkNO6kSxg"
+    },
+    {
+      "id": 2,
+      "title": "性能优化实战经验",
+      "summary": "深度剖析系统性能优化的核心方法论，从代码层到架构层全面提升系统性能，分享真实项目中的优化实战案例",
+      "content": "本文系统总结了多个大型项目的性能优化经验，涵盖代码优化、数据库优化、缓存策略、架构设计等多个方面，提供可落地的优化方案和最佳实践...",
+      "author": "码出名企路",
+      "date": "2025-01-15",
+      "category": "实战经验",
+      "views": 2560,
+      "external_url": "https://mp.weixin.qq.com/s/G2Cg7zxacAUmsOEHfYL1nQ"
+    }
+  ],
+  "about": {
+    "description": "我们是一支专注于技术培训的专业团队，致力于为学员提供高质量的技术课程和实战项目经验。",
+    "features": [
+      "系统化课程体系",
+      "实战项目驱动",
+      "专业讲师团队",
+      "终身学习支持"
+    ],
+    "team": [
+      {
+        "name": "小阳哥",
+        "role": "自动驾驶系统专家",
+        "description": "《C++设计模式》作者，曾就职百度、小米知名互联网公司",
+        "avatar": "/static/images/xyl.jpg",
+        "xiaohongshu": "https://www.xiaohongshu.com/user/profile/60f4477d000000002002ec4c?xsec_token=YBH3JLF-XaugH_00qxNf66-lPQZCcvUXMO-50SjOa5zUc%3D&xsec_source=app_share&xhsshare=&shareRedId=ODZINDc8O002NzUyOTgwNjgzOTlJSDpM&apptime=1768138815&share_id=b9cc4d645cc6442d828d611d8391130b&share_channel=wechat"
+      },
+      {
+        "name": "阿伟老师",
+        "role": "自动驾驶仿真专家",
+        "description": "自动驾驶从业多年，曾就职小鹏、小米知名新能源车企",
+        "avatar": "/static/images/aw.jpg",
+        "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5deaf47d0000000001000859?xsec_token=YBMUqkj5a0AEIpj4-2-YuIlmOAITqWd272Kjrf1uEH7vk%3D&xsec_source=app_share&xhsshare=&shareRedId=ODZINDc8O002NzUyOTgwNjgzOTlJSDpM&apptime=1768138771&share_id=81b1dc0bd93542c998fd0a91ea30e0d1&share_channel=wechat"
+      },
+      {
+        "name": "基架小刘",
+        "role": "分布式存储专家",
+        "description": "深耕存储行业多年，擅长C++、Golang，主导过多个大型分布式存储项目",
+        "avatar": "/static/images/lzc.jpg",
+        "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5d22cacb000000001202897f?xsec_token=YBtuGqCAWh-z86nB3gqstky-h3xfk_HAU2-8bKJIFvUR8%3D&xsec_source=app_share&xhsshare=&shareRedId=ODZINDc8O002NzUyOTgwNjgzOTlJSDpM&apptime=1768138797&share_id=a54fd56073d64f66b34392872db3d6be&share_channel=wechat"
+      }
+    ]
+  }
+}

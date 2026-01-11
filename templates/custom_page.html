@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ page_data.title }} - {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <h1 class="fw-bold mb-4">
+            {% if page_data.icon %}{{ page_data.icon }}{% endif %}
+            {{ page_data.title }}
+        </h1>
+
+        <div class="card shadow">
+            <div class="card-body p-5">
+                {% if page_data.content_type == 'html' %}
+                    {{ page_data.content | safe }}
+                {% elif page_data.content_type == 'markdown' %}
+                    <!-- 这里可以使用Markdown渲染器 -->
+                    <div class="markdown-content">
+                        {{ page_data.content }}
+                    </div>
+                {% else %}
+                    <p>{{ page_data.content }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

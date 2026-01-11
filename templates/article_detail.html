@@ -1,0 +1,231 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ article.title }} - {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <article class="card shadow">
+                    <div class="card-body p-5">
+                        <div class="mb-3">
+                            <span class="badge bg-success">{{ article.category }}</span>
+                        </div>
+
+                        <h1 class="fw-bold mb-4">{{ article.title }}</h1>
+
+                        <div class="d-flex gap-4 mb-4 text-muted">
+                            <span><i class="fas fa-user"></i> {{ article.author }}</span>
+                            <span><i class="fas fa-calendar"></i> {{ article.date }}</span>
+                            <span><i class="fas fa-eye"></i> {{ article.views }} 阅读</span>
+                        </div>
+
+                        <hr>
+
+                        {% if article.external_url %}
+                        <!-- 外部文章链接 -->
+                        <div class="alert alert-primary border-primary" role="alert">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-external-link-alt fa-2x me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">本文为外部链接文章</h5>
+                                    <p class="mb-0 small">点击下方按钮阅读完整内容</p>
+                                </div>
+                            </div>
+                            <a href="{{ article.external_url }}" target="_blank" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-book-open"></i> 阅读原文
+                            </a>
+                        </div>
+
+                        <div class="article-content">
+                            <p class="lead">{{ article.summary }}</p>
+                            <div class="bg-light p-4 rounded">
+                                <h5><i class="fas fa-info-circle text-primary"></i> 文章简介</h5>
+                                <p>{{ article.content }}</p>
+                                <p class="mb-0 text-muted"><small>点击上方"阅读原文"按钮查看完整文章内容</small></p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <!-- 普通文章内容 -->
+                        <div class="article-content">
+                            <p class="lead">{{ article.summary }}</p>
+                            <p>{{ article.content }}</p>
+
+                            <!-- 这里可以添加更多文章内容 -->
+                            <h3>核心要点</h3>
+                            <ul>
+                                <li>系统化学习方法</li>
+                                <li>理论与实践结合</li>
+                                <li>持续学习和总结</li>
+                            </ul>
+
+                            <h3>总结</h3>
+                            <p>通过本文的学习，相信大家对该主题有了更深入的理解。继续保持学习的热情，不断提升自己的技术能力。</p>
+                        </div>
+                        {% endif %}
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <button class="btn btn-outline-primary me-2" id="likeBtn" onclick="toggleLike(this)">
+                                    <i class="far fa-thumbs-up"></i> <span id="likeText">点赞</span> <span id="likeCount" class="badge bg-primary ms-1">0</span>
+                                </button>
+                                <button class="btn btn-outline-secondary" id="favoriteArticleBtn" onclick="toggleArticleFavorite(this)">
+                                    <i class="far fa-bookmark"></i> <span id="favoriteText">收藏</span>
+                                </button>
+                            </div>
+                            <button class="btn btn-outline-info" onclick="shareArticle()">
+                                <i class="fas fa-share-alt"></i> 分享
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="mt-4">
+                    <a href="/articles" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left"></i> 返回文章列表
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// 点赞功能
+function toggleLike(btn) {
+    const likeText = document.getElementById('likeText');
+    const likeCount = document.getElementById('likeCount');
+    const icon = btn.querySelector('i');
+
+    if (btn.classList.contains('btn-outline-primary')) {
+        // 点赞
+        btn.classList.remove('btn-outline-primary');
+        btn.classList.add('btn-primary');
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        likeText.textContent = '已赞';
+
+        // 增加点赞数
+        let count = parseInt(likeCount.textContent);
+        likeCount.textContent = count + 1;
+
+        showToast('success', '点赞成功！感谢支持');
+    } else {
+        // 取消点赞
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline-primary');
+        icon.classList.add('far');
+        icon.classList.remove('fas');
+        likeText.textContent = '点赞';
+
+        // 减少点赞数
+        let count = parseInt(likeCount.textContent);
+        likeCount.textContent = Math.max(0, count - 1);
+
+        showToast('info', '已取消点赞');
+    }
+}
+
+// 收藏文章功能
+function toggleArticleFavorite(btn) {
+    const favoriteText = document.getElementById('favoriteText');
+    const icon = btn.querySelector('i');
+
+    if (btn.classList.contains('btn-outline-secondary')) {
+        // 收藏
+        btn.classList.remove('btn-outline-secondary');
+        btn.classList.add('btn-secondary');
+        icon.classList.remove('far');
+        icon.classList.add('fas');
+        favoriteText.textContent = '已收藏';
+
+        showToast('success', '收藏成功！');
+    } else {
+        // 取消收藏
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-outline-secondary');
+        icon.classList.add('far');
+        icon.classList.remove('fas');
+        favoriteText.textContent = '收藏';
+
+        showToast('info', '已取消收藏');
+    }
+}
+
+// 分享功能
+function shareArticle() {
+    const articleTitle = document.querySelector('h1').textContent;
+    const articleUrl = window.location.href;
+
+    // 检查是否支持Web Share API
+    if (navigator.share) {
+        navigator.share({
+            title: articleTitle,
+            url: articleUrl
+        }).then(() => {
+            showToast('success', '分享成功！');
+        }).catch((error) => {
+            // 用户取消分享或分享失败
+            fallbackShare(articleUrl);
+        });
+    } else {
+        // 浏览器不支持Web Share API，使用备用方案
+        fallbackShare(articleUrl);
+    }
+}
+
+// 备用分享方案：复制链接到剪贴板
+function fallbackShare(url) {
+    // 创建临时输入框
+    const tempInput = document.createElement('input');
+    tempInput.value = url;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+
+    try {
+        document.execCommand('copy');
+        showToast('success', '链接已复制到剪贴板！');
+    } catch (err) {
+        showToast('warning', '复制失败，请手动复制链接');
+    }
+
+    document.body.removeChild(tempInput);
+}
+
+// 显示提示消息
+function showToast(type, message) {
+    let toastContainer = document.getElementById('toastContainer');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toastContainer';
+        toastContainer.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999;';
+        document.body.appendChild(toastContainer);
+    }
+
+    const iconMap = {
+        'success': 'check-circle',
+        'info': 'info-circle',
+        'warning': 'exclamation-triangle'
+    };
+
+    const toast = document.createElement('div');
+    toast.className = `alert alert-${type} alert-dismissible fade show`;
+    toast.style.cssText = 'min-width: 250px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);';
+    toast.innerHTML = `
+        <strong><i class="fas fa-${iconMap[type]}"></i> ${message}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+</script>
+
+{% endblock %}
