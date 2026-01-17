@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+
+{% block title %}技术开发 - {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section class="bg-gradient py-4" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+    <div class="container text-center text-white">
+        <h1 class="display-4 fw-bold mb-2"><i class="fas fa-code"></i> 技术开发服务</h1>
+        <p class="lead mb-3">专业团队，为您提供全方位技术开发解决方案</p>
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <span><i class="fas fa-check-circle me-1"></i> 从需求分析到上线运营</span>
+            <span><i class="fas fa-check-circle me-1"></i> 全流程技术支持</span>
+            <span><i class="fas fa-check-circle me-1"></i> 7×24小时服务</span>
+        </div>
+    </div>
+</section>
+
+<!-- 服务介绍 -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">我们的开发服务</h2>
+            <p class="text-muted">从需求分析到上线运营，全流程技术支持</p>
+        </div>
+
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-lg-6" id="service-{{ service.id }}">
+                <div class="card h-100 shadow hover-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="display-4 me-3">{{ service.icon }}</div>
+                            <div>
+                                <h3 class="card-title fw-bold mb-1">{{ service.title }}</h3>
+                                <p class="text-muted mb-0">{{ service.description }}</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"><i class="fas fa-check-circle text-success"></i> 核心能力</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for feature in service.features %}
+                                <span class="badge bg-light text-dark">{{ feature }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"><i class="fas fa-tools text-primary"></i> 技术栈</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                {% for tech in service.tech_stack %}
+                                <span class="badge bg-primary">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h5 class="fw-bold mb-2"><i class="fas fa-project-diagram text-warning"></i> 成功案例</h5>
+                            {% for case in service.cases %}
+                            <div class="mb-2 p-3 bg-light rounded">
+                                <h6 class="fw-bold mb-1">{{ case.name }}</h6>
+                                <p class="small text-muted mb-0">{{ case.description }}</p>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="/service/{{ service.id }}" class="btn btn-outline-primary me-2">
+                                <i class="fas fa-arrow-right"></i> 查看详情
+                            </a>
+                            <a href="/about" class="btn btn-primary">
+                                <i class="fas fa-phone"></i> 立即咨询
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- 开发流程 -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">开发流程</h2>
+            <p class="text-muted">规范化流程，保障项目质量</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-comments fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">需求沟通</h5>
+                    <p class="text-muted small">深入了解您的需求，确定项目目标和范围</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-pencil-ruler fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">方案设计</h5>
+                    <p class="text-muted small">制定技术方案，设计系统架构和UI界面</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="rounded-circle bg-warning text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-code fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">开发实施</h5>
+                    <p class="text-muted small">敏捷开发模式，定期交付可演示版本</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="text-center">
+                    <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
+                        <i class="fas fa-rocket fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">上线运维</h5>
+                    <p class="text-muted small">系统部署上线，提供持续运维支持</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 为什么选择我们 -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">为什么选择我们</h2>
+            <p class="text-muted">专业、高效、可靠的技术团队</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-users-cog fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold">专业团队</h5>
+                        <p class="text-muted">拥有多年开发经验的技术专家，涵盖前端、后端、AI、物联网等多个领域</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-tachometer-alt fa-3x text-success mb-3"></i>
+                        <h5 class="fw-bold">快速交付</h5>
+                        <p class="text-muted">敏捷开发流程，快速响应需求变化，确保项目按时高质量交付</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body text-center p-4">
+                        <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+                        <h5 class="fw-bold">质量保障</h5>
+                        <p class="text-muted">严格的代码审查和测试流程，确保系统稳定性和安全性</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">准备开始您的项目了吗？</h2>
+        <p class="lead mb-4">联系我们，获取免费技术咨询和项目报价</p>
+        <a href="/about" class="btn btn-light btn-lg">
+            <i class="fas fa-envelope"></i> 联系我们
+        </a>
+    </div>
+</section>
+
+<!-- 平滑滚动到锚点 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 检查URL中是否有锚点
+    if (window.location.hash) {
+        const targetId = window.location.hash;
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+            // 等待页面完全加载后再滚动
+            setTimeout(function() {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+                // 添加高亮效果
+                targetElement.classList.add('highlight-service');
+                setTimeout(function() {
+                    targetElement.classList.remove('highlight-service');
+                }, 2000);
+            }, 300);
+        }
+    }
+});
+</script>
+
+<style>
+.highlight-service {
+    animation: highlight 2s ease-in-out;
+}
+
+@keyframes highlight {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(13, 110, 253, 0.5); }
+}
+</style>
+{% endblock %}

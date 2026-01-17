@@ -105,6 +105,24 @@ def article_detail(article_id):
                          config=config,
                          article=article)
 
+@app.route('/development')
+def development():
+    """技术开发"""
+    return render_template('development.html',
+                         config=config,
+                         services=config['development_services'])
+
+@app.route('/service/<int:service_id>')
+def service_detail(service_id):
+    """技术开发服务详情"""
+    service = next((s for s in config['development_services'] if s['id'] == service_id), None)
+    if not service:
+        return "服务不存在", 404
+
+    return render_template('service_detail.html',
+                         config=config,
+                         service=service)
+
 @app.route('/about')
 def about():
     """关于我们"""

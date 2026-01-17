@@ -1,6 +1,6 @@
 {
   "site_name": "北京义昂AI科技有限公司",
-  "site_description": "专业的技术培训平台，提供优质的技术课程和实战项目",
+  "site_description": "提供专业的技术培训与技术开发服务，涵盖AI培训、小程序开发、APP开发、AI工具定制、物联网解决方案等全方位技术服务",
   "navigation": [
     {
       "id": "home",
@@ -10,9 +10,15 @@
     },
     {
       "id": "courses",
-      "name": "课程中心",
+      "name": "技术培训",
       "url": "/courses",
       "icon": "📚"
+    },
+    {
+      "id": "development",
+      "name": "技术开发",
+      "url": "/development",
+      "icon": "💻"
     },
     {
       "id": "videos",
@@ -75,6 +81,200 @@
       "image": "/static/images/ddd_title.png",
       "video_url": "https://www.bilibili.com/video/BV1Jdw6eyEU3/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
       "syllabus_image": "/static/images/ddd_learning.jpg"
+    },
+    {
+      "id": 4,
+      "title": "定制化项目服务",
+      "description": "根据个人求职需要量身定制项目，包含项目开发指导、简历优化、面试辅导等一站式服务，助力您成功斩获心仪Offer",
+      "category": "定制服务",
+      "level": "专属",
+      "duration": "1对1定制",
+      "price": "¥1999",
+      "instructor": "小阳哥",
+      "tags": ["定制项目", "简历辅导", "求职指导", "1对1"],
+      "image": "/static/images/dzhxm.png",
+      "video_url": "https://www.bilibili.com/video/BV1LBj4zFE5m/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "features": [
+        "根据求职方向定制真实项目",
+        "简历深度优化与亮点打磨",
+        "模拟面试与技术问答训练",
+        "职业发展规划建议",
+        "终身技术咨询支持"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "企业化方案设计",
+      "description": "为企业提供完整的技术解决方案设计，包含系统架构设计、技术选型、团队培训、落地实施等全流程服务",
+      "category": "企业服务",
+      "level": "高端",
+      "duration": "项目制",
+      "price": "¥50000起",
+      "instructor": "小阳哥",
+      "tags": ["企业服务", "方案设计", "技术咨询", "团队培训"],
+      "image": "/static/images/qydzfa.png",
+      "features": [
+        "深度需求调研与分析",
+        "完整技术方案与架构设计",
+        "技术选型与风险评估",
+        "团队技术培训与指导",
+        "项目落地实施支持",
+        "长期技术顾问服务"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "《一对一强化学习》就业训练营",
+      "description": "专为求职者打造的1对1强化学习训练营，全程跟踪指导，从技术提升到简历优化，从模拟面试到offer选择，全方位助力成功就业",
+      "category": "就业培训",
+      "level": "进阶",
+      "duration": "3个月",
+      "price": "¥6666",
+      "instructor": "小阳哥",
+      "tags": ["1对1辅导", "就业指导", "强化学习", "面试培训"],
+      "image": "/static/images/ydy.png",
+      "external_url": "https://mp.weixin.qq.com/s/OLF2KPMT0yritgYKZ1kxkA",
+      "features": [
+        "1对1技术强化训练",
+        "个性化学习路径规划",
+        "真实项目实战经验",
+        "简历深度打磨优化",
+        "模拟面试与复盘",
+        "全程就业跟踪指导",
+        "Offer谈判与选择建议"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "性能优化训练营",
+      "description": "深入学习系统性能优化技术，从代码层到架构层，全面提升系统性能，掌握性能分析与优化的核心方法",
+      "category": "性能优化",
+      "level": "高级",
+      "duration": "8周",
+      "price": "¥1499",
+      "instructor": "大熊",
+      "tags": ["性能优化", "系统架构", "性能分析", "高并发"],
+      "image": "/static/images/xnyh.png",
+      "external_url": "https://mp.weixin.qq.com/s?__biz=MzIxNTk1ODUyNA==&mid=2247492182&idx=1&sn=66d3ee6a2b2e12e978c9a01482432573&scene=21&poc_token=HL4ha2mjB-7l8tpq4YFYIaJ9xmvph2JlLJrtCHxo",
+      "features": [
+        "性能分析工具与方法",
+        "代码级性能优化",
+        "数据库性能调优",
+        "缓存策略与应用",
+        "高并发系统设计",
+        "性能监控与诊断",
+        "真实案例实战"
+      ]
+    }
+  ],
+  "development_services": [
+    {
+      "id": 1,
+      "title": "小程序开发",
+      "description": "为企业和个人提供微信小程序、支付宝小程序等多平台小程序开发服务，从需求分析到上线运营全流程支持",
+      "icon": "📱",
+      "features": ["UI/UX设计", "前后端开发", "云服务部署", "数据分析", "持续维护"],
+      "tech_stack": ["微信小程序", "uni-app", "云开发", "Node.js"],
+      "cases": [
+        {
+          "name": "电商小程序",
+          "description": "完整的商城系统，包含商品展示、购物车、订单管理、支付等功能"
+        },
+        {
+          "name": "教育培训小程序",
+          "description": "在线课程、视频播放、学员管理、考试系统"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "APP开发",
+      "description": "原生iOS/Android应用开发及跨平台移动应用开发，打造流畅用户体验的移动端产品",
+      "icon": "📲",
+      "features": ["原生开发", "跨平台方案", "UI设计", "性能优化", "应用上架"],
+      "tech_stack": ["Flutter", "React Native", "Swift", "Kotlin"],
+      "cases": [
+        {
+          "name": "企业管理APP",
+          "description": "OA办公、审批流程、考勤打卡、数据统计等功能"
+        },
+        {
+          "name": "智能硬件控制APP",
+          "description": "蓝牙/WiFi连接、设备控制、数据可视化"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "AI工具开发",
+      "description": "基于大模型和AI技术的智能应用开发，包括智能客服、文本生成、图像处理等AI工具定制",
+      "icon": "🤖",
+      "features": ["大模型集成", "提示词工程", "RAG系统", "模型微调", "API开发"],
+      "tech_stack": ["ChatGPT", "Claude", "LangChain", "向量数据库", "FastAPI"],
+      "cases": [
+        {
+          "name": "企业知识库问答系统",
+          "description": "基于企业文档的智能问答，支持多轮对话和知识检索"
+        },
+        {
+          "name": "AI写作助手",
+          "description": "自动生成营销文案、技术文档、报告总结等"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "物联网开发",
+      "description": "智能硬件、传感器网络、边缘计算等物联网解决方案，实现设备互联与智能控制",
+      "icon": "🌐",
+      "features": ["硬件选型", "嵌入式开发", "云平台对接", "数据采集", "远程控制"],
+      "tech_stack": ["Arduino", "树莓派", "ESP32", "MQTT", "时序数据库"],
+      "cases": [
+        {
+          "name": "智能环境监测系统",
+          "description": "温湿度、空气质量实时监测与预警"
+        },
+        {
+          "name": "智能农业系统",
+          "description": "自动灌溉、环境控制、数据分析"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "网站开发",
+      "description": "企业官网、电商平台、管理系统等Web应用开发，响应式设计，SEO优化，打造专业品牌形象",
+      "icon": "💻",
+      "features": ["响应式设计", "前后端开发", "数据库设计", "SEO优化", "性能优化"],
+      "tech_stack": ["Vue.js", "React", "Python", "Node.js", "MySQL"],
+      "cases": [
+        {
+          "name": "企业官网",
+          "description": "品牌展示、产品介绍、新闻动态、在线咨询"
+        },
+        {
+          "name": "电商平台",
+          "description": "商品管理、订单系统、支付集成、用户中心"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "教学 / 培训 / 文档撰写",
+      "description": "提供技术培训、企业内训、技术文档编写等服务，帮助团队快速掌握新技术，提升开发效率和代码质量",
+      "icon": "📖",
+      "features": ["企业内训", "技术分享", "文档编写", "代码规范", "最佳实践"],
+      "tech_stack": ["Markdown", "技术演讲", "课程设计", "实战项目", "在线教学"],
+      "cases": [
+        {
+          "name": "企业技术培训",
+          "description": "针对企业团队定制技术培训课程，提升团队技术能力"
+        },
+        {
+          "name": "技术文档撰写",
+          "description": "API文档、技术手册、用户指南、架构设计文档等"
+        }
+      ]
     }
   ],
   "videos": [
@@ -95,6 +295,15 @@
       "duration": "68分钟",
       "views": 4150,
       "date": "2025-01-08"
+    },
+    {
+      "id": 3,
+      "title": "49种轻创业项目",
+      "description": "分享49种适合程序员和技术人的轻创业项目方向，从技术变现到副业选择，帮助你找到最适合的创业路径",
+      "url": "https://www.bilibili.com/video/BV1CbM1zzENu/?spm_id_from=333.1387.collection.video_card.click&vd_source=e1e603813fd27bd967e910ba08eab36b",
+      "duration": "45分钟",
+      "views": 2890,
+      "date": "2025-01-17"
     }
   ],
   "articles": [
@@ -119,15 +328,28 @@
       "category": "实战经验",
       "views": 2560,
       "external_url": "https://mp.weixin.qq.com/s/G2Cg7zxacAUmsOEHfYL1nQ"
+    },
+    {
+      "id": 3,
+      "title": "国外程序员副业",
+      "summary": "探索国外程序员如何利用技术能力开展副业，分享多种可行的副业模式、收入来源和实践经验，为技术人拓展职业发展路径提供参考",
+      "content": "本文分享国外程序员常见的副业模式，包括开源项目、技术博客、在线课程、咨询服务等多种方式，帮助技术人实现收入多元化...",
+      "author": "小阳哥",
+      "date": "2025-01-16",
+      "category": "职业发展",
+      "views": 1850,
+      "external_url": "https://mp.weixin.qq.com/s?__biz=MzIxNTk1ODUyNA==&mid=2247491625&idx=1&sn=44cd5645fb756d183935e0134a6bca3a&scene=21&poc_token=HOkla2mj22y7fG9ZYCin0h2KFMVgWjcVSkrKjduE"
     }
   ],
   "about": {
-    "description": "我们是一支专注于技术培训的专业团队，致力于为学员提供高质量的技术课程和实战项目经验。",
+    "description": "北京义昂AI科技有限公司致力于为个人和企业提供全方位的技术服务。我们专注于技术培训与技术开发两大核心业务，拥有一支经验丰富的技术专家团队，涵盖AI、自动驾驶、分布式系统、移动开发、物联网等多个技术领域。无论是系统化的技术培训课程，还是定制化的技术开发解决方案，我们都以专业、高效、创新的态度为客户提供优质服务。",
     "features": [
-      "系统化课程体系",
-      "实战项目驱动",
-      "专业讲师团队",
-      "终身学习支持"
+      "系统化技术培训体系",
+      "全栈技术开发能力",
+      "资深技术专家团队",
+      "企业级项目实战经验",
+      "一对一定制化服务",
+      "7×24小时技术支持"
     ],
     "team": [
       {
@@ -150,6 +372,19 @@
         "description": "深耕存储行业多年，擅长C++、Golang，主导过多个大型分布式存储项目",
         "avatar": "/static/images/lzc.jpg",
         "xiaohongshu": "https://www.xiaohongshu.com/user/profile/5d22cacb000000001202897f?xsec_token=YBtuGqCAWh-z86nB3gqstky-h3xfk_HAU2-8bKJIFvUR8%3D&xsec_source=app_share&xhsshare=&shareRedId=ODZINDc8O002NzUyOTgwNjgzOTlJSDpM&apptime=1768138797&share_id=a54fd56073d64f66b34392872db3d6be&share_channel=wechat"
+      },
+      {
+        "name": "小聂",
+        "role": "具身视觉专家",
+        "description": "小米从业7年，深耕相机视觉、具身视觉领域、具身机器人行业专家",
+        "avatar": "/static/images/xn.jpg",
+        "xiaohongshu": "https://mp.weixin.qq.com/s/7-AZ5LayPSmsqIbAUNtClg"
+      },
+      {
+        "name": "大熊",
+        "role": "性能优化专家",
+        "description": "曾就职于小米、蔚来、百度自动驾驶性能优化团队，主导多款车型算力优化落地",
+        "avatar": "/static/images/dx.jpg"
       }
     ]
   }

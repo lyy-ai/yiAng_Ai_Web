@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ service.title }} - {{ config.site_name }}{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<section class="py-5" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+    <div class="container text-white">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="display-1 me-4">{{ service.icon }}</div>
+                    <div>
+                        <h1 class="fw-bold mb-2">{{ service.title }}</h1>
+                        <p class="lead mb-0">{{ service.description }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-end">
+                <a href="/about" class="btn btn-light btn-lg">
+                    <i class="fas fa-phone"></i> 立即咨询
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 服务详情 -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- 主要内容 -->
+            <div class="col-lg-8">
+                <!-- 核心能力 -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold mb-4">
+                            <i class="fas fa-check-circle text-success"></i> 核心能力
+                        </h3>
+                        <div class="row g-3">
+                            {% for feature in service.features %}
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center p-3 bg-light rounded">
+                                    <i class="fas fa-star text-warning me-3 fs-5"></i>
+                                    <span class="fw-bold">{{ feature }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 技术栈 -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold mb-4">
+                            <i class="fas fa-tools text-primary"></i> 技术栈
+                        </h3>
+                        <div class="d-flex flex-wrap gap-3">
+                            {% for tech in service.tech_stack %}
+                            <span class="badge bg-primary p-3 fs-6">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 成功案例 -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold mb-4">
+                            <i class="fas fa-project-diagram text-warning"></i> 成功案例
+                        </h3>
+                        <div class="row g-4">
+                            {% for case in service.cases %}
+                            <div class="col-md-6">
+                                <div class="card border-0 bg-light h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="rounded-circle bg-warning text-white d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                                <i class="fas fa-briefcase"></i>
+                                            </div>
+                                            <h5 class="fw-bold mb-0">{{ case.name }}</h5>
+                                        </div>
+                                        <p class="text-muted mb-3">{{ case.description }}</p>
+                                        <div class="text-end">
+                                            <span class="badge bg-success">已完成</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 服务流程 -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h3 class="fw-bold mb-4">
+                            <i class="fas fa-tasks text-info"></i> 服务流程
+                        </h3>
+                        <div class="row g-3">
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <span class="fs-4 fw-bold">1</span>
+                                    </div>
+                                    <h6 class="fw-bold">需求分析</h6>
+                                    <small class="text-muted">深入了解需求</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="rounded-circle bg-success text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <span class="fs-4 fw-bold">2</span>
+                                    </div>
+                                    <h6 class="fw-bold">方案设计</h6>
+                                    <small class="text-muted">制定技术方案</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="rounded-circle bg-warning text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <span class="fs-4 fw-bold">3</span>
+                                    </div>
+                                    <h6 class="fw-bold">开发实施</h6>
+                                    <small class="text-muted">敏捷开发交付</small>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="text-center p-3 bg-light rounded">
+                                    <div class="rounded-circle bg-danger text-white d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                                        <span class="fs-4 fw-bold">4</span>
+                                    </div>
+                                    <h6 class="fw-bold">上线运维</h6>
+                                    <small class="text-muted">持续支持维护</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="col-lg-4">
+                <!-- 联系咨询 -->
+                <div class="card shadow-sm mb-4 sticky-top" style="top: 20px;">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">联系我们</h5>
+                        <p class="text-muted mb-4">获取专业技术咨询和项目报价</p>
+                        <a href="/about" class="btn btn-primary w-100 mb-3">
+                            <i class="fas fa-phone"></i> 立即咨询
+                        </a>
+                        <a href="/development" class="btn btn-outline-secondary w-100">
+                            <i class="fas fa-arrow-left"></i> 查看所有服务
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 其他服务 -->
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">其他服务</h5>
+                        {% for s in config.development_services %}
+                            {% if s.id != service.id %}
+                            <a href="/service/{{ s.id }}" class="text-decoration-none">
+                                <div class="d-flex align-items-center p-2 mb-2 rounded hover-bg">
+                                    <div class="me-3 fs-3">{{ s.icon }}</div>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold text-dark">{{ s.title }}</h6>
+                                        <small class="text-muted">{{ s.description[:30] }}...</small>
+                                    </div>
+                                </div>
+                            </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">准备开始您的项目了吗？</h2>
+        <p class="lead text-muted mb-4">我们的专业团队随时为您服务</p>
+        <a href="/about" class="btn btn-primary btn-lg me-3">
+            <i class="fas fa-envelope"></i> 联系我们
+        </a>
+        <a href="/development" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-th"></i> 查看所有服务
+        </a>
+    </div>
+</section>
+
+<style>
+.hover-bg:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.sticky-top {
+    position: sticky;
+    top: 20px;
+}
+</style>
+{% endblock %}

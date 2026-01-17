@@ -32,7 +32,7 @@
             </div>
         </div>
 
-        <h2 class="fw-bold mb-4 text-center"><i class="fas fa-users"></i> 讲师团队</h2>
+        <h2 class="fw-bold mb-4 text-center"><i class="fas fa-users"></i> 核心团队</h2>
         <div class="row g-4">
             {% for member in about.team %}
             <div class="col-md-6 col-lg-4">
@@ -51,9 +51,15 @@
 
                         {% if member.xiaohongshu %}
                         <div class="mt-3">
+                            {% if 'weixin' in member.xiaohongshu or 'mp.weixin' in member.xiaohongshu %}
+                            <a href="{{ member.xiaohongshu }}" target="_blank" class="btn btn-success btn-sm">
+                                <i class="fab fa-weixin"></i> 关注公众号
+                            </a>
+                            {% else %}
                             <a href="{{ member.xiaohongshu }}" target="_blank" class="btn btn-danger btn-sm">
                                 <i class="fas fa-book"></i> 关注小红书
                             </a>
+                            {% endif %}
                         </div>
                         {% endif %}
                     </div>
@@ -65,7 +71,7 @@
         <!-- 联系我们 -->
         <div class="mt-5">
             <h3 class="fw-bold mb-4 text-center"><i class="fas fa-comments text-primary"></i> 联系我们</h3>
-            <p class="text-muted text-center mb-4">如有任何问题，欢迎随时联系我们</p>
+            <p class="text-muted text-center mb-4">无论是技术培训还是技术开发需求，欢迎随时联系我们</p>
 
             <div class="row g-4">
                 <!-- 邮箱联系 -->
@@ -76,7 +82,7 @@
                                 <i class="fas fa-envelope fa-3x text-primary"></i>
                             </div>
                             <h5 class="fw-bold mb-3">邮箱联系</h5>
-                            <p class="text-muted mb-2">发送邮件咨询课程详情</p>
+                            <p class="text-muted mb-2">发送邮件咨询培训课程或技术开发</p>
                             <p class="text-primary fw-bold fs-5 mb-3">lyy3690@126.com</p>
                             <button onclick="copyToClipboard('lyy3690@126.com', '邮箱')" class="btn btn-primary">
                                 <i class="fas fa-copy"></i> 复制邮箱地址
@@ -107,7 +113,7 @@
             <div class="text-center mt-4">
                 <div class="alert alert-info d-inline-block" role="alert">
                     <i class="fab fa-weixin fa-lg"></i>
-                    <strong>微信咨询：</strong>添加讲师微信获取更多课程信息（扫描上方讲师的小红书二维码关注）
+                    <strong>微信咨询：</strong>添加技术专家微信，获取课程详情或技术开发方案（扫描上方团队成员的小红书二维码关注）
                 </div>
             </div>
         </div>
